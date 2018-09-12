@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
+import './normalize.css';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      tanggal: new Date().toString(),
+    };
+  }
+
   renderHeader() {
     return (
       <div className="header">
         <div className="header-link">
-          <a href="" className="title">QTemu</a>
+          <a onClick={() => { this.setState({ 'tanggal': 123 }) }} className="title">QTemu</a>
           <a href="">Create Meetup</a>
           <a href="">Explore</a>
         </div>
@@ -22,7 +31,7 @@ class App extends Component {
     return (
       <div className="active-meetup grey-section">
         <div className="photo-active-meetup">
-          <img src="img/grey.jpg" />
+          <img src="img/grey.jpg" alt="photo" />
         </div>
         <div className="description-active-meetup">
           <h3>Hacktive8 Meetup</h3>
@@ -59,7 +68,7 @@ class App extends Component {
             Awesome meetup and event
           </div>
           <div className="next-meetup-date">
-            25 January 2018
+            {this.state.tanggal}
           </div>
           <div class="next-meetup-p">
             <p>
