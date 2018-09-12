@@ -9,6 +9,16 @@ class App extends Component {
 
     this.state = {
       tanggal: new Date().toString(),
+      peoples: [
+          {
+            name: 'Obi Wan',
+            status: 'Jedi'
+          },
+          {
+            name: 'Luke Skywalker',
+            status: 'Padawan'
+          }
+        ]
     };
   }
 
@@ -31,7 +41,7 @@ class App extends Component {
     return (
       <div className="active-meetup grey-section">
         <div className="photo-active-meetup">
-          <img src="img/grey.jpg" alt="photo" />
+          <img src="img/grey.jpg" alt="grey area" />
         </div>
         <div className="description-active-meetup">
           <h3>Hacktive8 Meetup</h3>
@@ -50,7 +60,7 @@ class App extends Component {
             </div>
             <div className="description-active-meetup-left">
               <div>
-                <a href="" class="btn">Join Us</a>
+                <a href="" className="btn">Join Us</a>
               </div>
             </div>
           </div>
@@ -70,12 +80,12 @@ class App extends Component {
           <div className="next-meetup-date">
             {this.state.tanggal}
           </div>
-          <div class="next-meetup-p">
+          <div className="next-meetup-p">
             <p>
-              <div>Hello, JavaScript & Node.js Ninjas!</div>
-              <div>Get ready for our monthly meetup JakartaJS! This will be our fifth meetup of 2018!</div>
-              <div>The meetup format will contain some short stories and technical talks.</div>
-              <div>If you have short announcement you'd like to share with the audience, you may do so during open mic accouncement.</div>
+              Hello, JavaScript & Node.js Ninjas!<br />
+              Get ready for our monthly meetup JakartaJS! This will be our fifth meetup of 2018!<br />
+              The meetup format will contain some short stories and technical talks.<br />
+              If you have short announcement you'd like to share with the audience, you may do so during open mic accouncement.
             </p>
             <p>
               Remember to bring a photo ID to get through building security.
@@ -112,7 +122,7 @@ class App extends Component {
   renderMembers() {
     return (
       <div className="container-section">
-        <div class="container-section-flex">
+        <div className="container-section-flex">
           <div>
             <h3>Members</h3>
           </div>
@@ -132,7 +142,7 @@ class App extends Component {
     return (
       <div className="member-section">
         <div className="photo-member">
-          <img src="img/grey.jpg" />
+          <img src="img/grey.jpg" alt="member-pic" />
         </div>
         <div className="profile-member">
           <div>Organizers</div>
@@ -153,7 +163,7 @@ class App extends Component {
   renderPastMeetup() {
     return (
       <div className="past-meetup white-section">
-        <div class="container-section-flex">
+        <div className="container-section-flex">
           <div>
             <h3>Past Meetup</h3>
           </div>
@@ -161,7 +171,7 @@ class App extends Component {
             <a href="">See all</a>
           </div>
         </div>
-        <div class="past-meetup-list">
+        <div className="past-meetup-list">
           {this.renderMeetupEvent()}
           {this.renderMeetupEvent()}
           {this.renderMeetupEvent()}
@@ -176,11 +186,11 @@ class App extends Component {
         27 November 2017
         <hr />
         #39 JakartaJS Meetup
-        <div class="meetup-went-total">
+        <div className="meetup-went-total">
           139 went
         </div>
-        <div class="meetup-view-btn">
-          <a href="" class="btn-grey">View</a>
+        <div className="meetup-view-btn">
+          <a href="" className="btn-grey">View</a>
         </div>
       </div>
     );
@@ -195,8 +205,30 @@ class App extends Component {
         {this.renderAboutMeetup()}
         {this.renderMembers()}
         {this.renderPastMeetup()}
+        <ListPeople people={this.state.peoples} />
       </div>
     );
+  }
+}
+
+export class ListPeople extends Component {
+  // constructor(props) {
+  //   // hanya diperlukan ketika props mau digunakan di dalam constructor
+  //   super(props);
+  // }
+
+  renderChild() {
+    return this.props.people.map((data, index) => {
+      return (
+        <div key={index}>
+          {data.name}
+        </div>
+      )
+    });
+  }
+
+  render() {
+    return this.renderChild();
   }
 }
 
