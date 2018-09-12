@@ -158,6 +158,8 @@ QTemu Style
 
 .active-meetup{
   background: lightgrey;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .photo-member img{
