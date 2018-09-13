@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from './components/Organisms/Header';
-// import BodyHome from './components/BodyHome';
-import ActiveMeetup from './components/ActiveMeetup';
+import ActiveMeetup from './components/Organisms/ActiveMeetup';
 
 // import logo from './logo.svg';
 import './normalize.css';

@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+// import Image from 'prop-types';
+
+import Image from '../../Atoms/Image';
+import TitleH3 from '../../Atoms/TitleH3';
+
 import './style.css';
 
 export default class ActiveMeetup extends Component {
     render() {
         return (
             <div className="active-meetup grey-section">
-                <div className="photo-active-meetup">
-                    <img src="img/grey.jpg" alt="grey area" />
-                </div>
+                <Image className="photo-active-meetup" src="img/grey.jpg" alt="grey area" />
                 <div className="description-active-meetup">
-                    <h3>Hacktive8 Meetup</h3>
+                    <TitleH3 text="Hacktive8 Meetup" />
                     <div className="description-active-meetup-content">
                         <div className="description-active-meetup-left">
                             <div className="left-content">Location</div>

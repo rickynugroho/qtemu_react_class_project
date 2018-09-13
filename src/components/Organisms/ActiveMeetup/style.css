@@ -2,7 +2,7 @@
   margin-left: 20px;
 }
 
-.photo-active-meetup img{
+img.photo-active-meetup{
   max-width: 200px;
   max-height: 200px;
 }
