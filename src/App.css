@@ -35,30 +35,6 @@ React Style
 QTemu Style
 */
 
-.header{
-  background: grey;
-  padding: 10px 10px;
-  color:#fff;
-  display: flex;
-  justify-content: space-between;
-}
-
-.header .title{
-  color:#fff;
-  font-size: 1.2em;
-}
-
-.header-link{
-  width:300px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.header a{
-  color: lightgrey;
-  text-decoration: none;
-}
-
 .grey-section{
   background: lightgrey;
   margin: 10px;
