@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Header from './components/Header';
+import BodyHome from './components/BodyHome';
+import ActiveMeetup from './components/ActiveMeetup';
+
 // import logo from './logo.svg';
 import './normalize.css';
 import './App.css';
@@ -9,64 +13,17 @@ class App extends Component {
 
     this.state = {
       tanggal: new Date().toString(),
-      peoples: [
-          {
-            name: 'Obi Wan',
-            status: 'Jedi'
-          },
-          {
-            name: 'Luke Skywalker',
-            status: 'Padawan'
-          }
-        ]
+      // peoples: [
+      //     {
+      //       name: 'Obi Wan',
+      //       status: 'Jedi'
+      //     },
+      //     {
+      //       name: 'Luke Skywalker',
+      //       status: 'Padawan'
+      //     }
+      //   ]
     };
-  }
-
-  renderHeader() {
-    return (
-      <div className="header">
-        <div className="header-link">
-          <a onClick={() => { this.setState({ 'tanggal': 123 }) }} className="title">QTemu</a>
-          <a href="">Create Meetup</a>
-          <a href="">Explore</a>
-        </div>
-        <div>
-          <a href="">Login</a>
-        </div>
-      </div>
-    );
-  }
-
-  renderActiveMeetup() {
-    return (
-      <div className="active-meetup grey-section">
-        <div className="photo-active-meetup">
-          <img src="img/grey.jpg" alt="grey area" />
-        </div>
-        <div className="description-active-meetup">
-          <h3>Hacktive8 Meetup</h3>
-          <div className="description-active-meetup-content">
-            <div className="description-active-meetup-left">
-              <div className="left-content">Location</div>
-              <div className="right-content">Jakarta, Indonesia</div>
-            </div>
-            <div className="description-active-meetup-left">
-              <div className="left-content">Members</div>
-              <div className="right-content">1,078</div>
-            </div>
-            <div className="description-active-meetup-left">
-              <div className="left-content">Organizers</div>
-              <div className="right-content">Adhy Wiranata</div>
-            </div>
-            <div className="description-active-meetup-left">
-              <div>
-                <a href="" className="btn">Join Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
   }
 
   renderNextMeetup() {
@@ -199,37 +156,39 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.renderHeader()}
-        {this.renderActiveMeetup()}
+        <Header />
+        <BodyHome />
+        <ActiveMeetup />
+        {/* {this.renderActiveMeetup()} */}
         {this.renderNextMeetup()}
         {this.renderAboutMeetup()}
         {this.renderMembers()}
         {this.renderPastMeetup()}
-        <ListPeople people={this.state.peoples} />
+        {/* <ListPeople people={this.state.peoples} /> */}
       </div>
     );
   }
 }
 
-export class ListPeople extends Component {
-  // constructor(props) {
-  //   // hanya diperlukan ketika props mau digunakan di dalam constructor
-  //   super(props);
-  // }
+// export class ListPeople extends Component {
+//   // constructor(props) {
+//   //   // hanya diperlukan ketika props mau digunakan di dalam constructor
+//   //   super(props);
+//   // }
 
-  renderChild() {
-    return this.props.people.map((data, index) => {
-      return (
-        <div key={index}>
-          {data.name}
-        </div>
-      )
-    });
-  }
+//   renderChild() {
+//     return this.props.people.map((data, index) => {
+//       return (
+//         <div key={index}>
+//           {data.name}
+//         </div>
+//       )
+//     });
+//   }
 
-  render() {
-    return this.renderChild();
-  }
-}
+//   render() {
+//     return this.renderChild();
+//   }
+// }
 
 export default App;
