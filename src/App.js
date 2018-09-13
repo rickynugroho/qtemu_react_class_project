@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import BodyHome from './components/BodyHome';
+
+import Header from './components/Organisms/Header';
+// import BodyHome from './components/BodyHome';
 import ActiveMeetup from './components/ActiveMeetup';
 
 // import logo from './logo.svg';
@@ -12,7 +13,7 @@ class App extends Component {
     super();
 
     this.state = {
-      tanggal: new Date().toString(),
+      // tanggal: new Date().toString(),
       // peoples: [
       //     {
       //       name: 'Obi Wan',
@@ -35,7 +36,8 @@ class App extends Component {
             Awesome meetup and event
           </div>
           <div className="next-meetup-date">
-            {this.state.tanggal}
+            1 January 2018
+            {/* {this.state.tanggal} */}
           </div>
           <div className="next-meetup-p">
             <p>
@@ -157,7 +159,6 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <BodyHome />
         <ActiveMeetup />
         {/* {this.renderActiveMeetup()} */}
         {this.renderNextMeetup()}
