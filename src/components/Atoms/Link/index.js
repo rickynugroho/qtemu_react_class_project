@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import '../Button/style.css';
 
 export default class Link extends Component {
     render() {
