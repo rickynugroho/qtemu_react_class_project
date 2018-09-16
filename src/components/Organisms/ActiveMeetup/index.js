@@ -6,7 +6,7 @@ import TitleH3 from '../../Atoms/TitleH3';
 import LeftRightDescription from '../../Molecules/LeftRightDescription';
 import DivText from '../../Atoms/DivText';
 import Link from '../../Atoms/Link';
-import GreySection from '../../Molecules/GreySection';
+import Section from '../../Molecules/Section';
 
 import './style.css';
 
@@ -14,7 +14,7 @@ export default class ActiveMeetup extends Component {
     render() {
         return (
             <DivText className="active-meetup">
-                <GreySection className=" grey-section">
+                <Section>
                     <Image className="photo-active-meetup" src="img/grey.jpg" alt="grey area" />
                     <DivText className="description-active-meetup">
                         <TitleH3>{this.props.infoMeetup.meetupName}</TitleH3>
@@ -36,7 +36,7 @@ export default class ActiveMeetup extends Component {
                             </LeftRightDescription>
                         </DivText>
                     </DivText>
-                </GreySection>
+                </Section>
             </DivText>
         );
     }

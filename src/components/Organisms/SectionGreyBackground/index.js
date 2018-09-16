@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import TitleH3 from '../../Atoms/TitleH3';
 // import Link from '../../Atoms/Link';
 import DivText from '../../Atoms/DivText';
-import GreySection from '../../Molecules/GreySection';
+import Section from '../../Molecules/Section';
 
 import './style.css';
 
@@ -15,9 +15,9 @@ export default class SectionGreyBackground extends Component {
         return (
             <DivText className="container-section">
                 <TitleH3>{this.props.title}</TitleH3>
-                <GreySection>
+                <Section>
                     {this.props.children}
-                </GreySection>
+                </Section>
             </DivText>
         );
     }
