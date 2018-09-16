@@ -14,6 +14,7 @@ class App extends Component {
     this.state = {
       tanggal: new Date().toString(),
       info: {
+        meetupName: 'React Meetup',
         location: 'Jakarta, Indonesia',
         numberOfMembers: '1078',
         headOrganizer: 'Hacktiv8',
@@ -190,7 +191,8 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <ActiveMeetup />
+        <ActiveMeetup infoMeetup={this.state.info} />
+
         {/* {this.renderActiveMeetup()} */}
         {this.renderNextMeetup()}
         {this.renderAboutMeetup()}
