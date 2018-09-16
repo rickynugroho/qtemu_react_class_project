@@ -4,6 +4,8 @@ import Header from './components/Organisms/Header';
 import ActiveMeetup from './components/Organisms/ActiveMeetup';
 import SectionWithBackground from './components/Organisms/SectionWithBackground';
 import DivText from './components/Atoms/DivText';
+import Link from './components/Atoms/Link';
+import Image from './components/Atoms/Image';
 
 // import logo from './logo.svg';
 import './normalize.css';
@@ -61,46 +63,46 @@ class App extends Component {
     // };
   }
 
-  renderMembers() {
-    return (
-      <div className="container-section">
-        <div className="container-section-flex">
-          <div>
-            <h3>Members</h3>
-          </div>
-          <div>
-            <a href="">See all</a>
-          </div>
-        </div>
-        <div className="member-list grey-section">
-          {this.renderMember()}
-          {this.renderMemberOther()}
-        </div>
-      </div>
-    );
-  }
+  // renderMembers() {
+  //   return (
+  //     <div className="container-section">
+  //       <div className="container-section-flex">
+  //         <div>
+  //           <h3>Members</h3>
+  //         </div>
+  //         <div>
+  //           <a href="">See all</a>
+  //         </div>
+  //       </div>
+  //       <div className="member-list grey-section">
+  //         {this.renderMember()}
+  //         {this.renderMemberOther()}
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
-  renderMember() {
-    return (
-      <div className="member-section">
-        <div className="photo-member">
-          <img src="img/grey.jpg" alt="member-pic" />
-        </div>
-        <div className="profile-member">
-          <div>Organizers</div>
-          <div>Adhy Wiranata</div>
-        </div>
-      </div>
-    );
-  }
+  // renderMember() {
+  //   return (
+  //     <div className="member-section">
+  //       <div className="photo-member">
+  //         <img src="img/grey.jpg" alt="member-pic" />
+  //       </div>
+  //       <div className="profile-member">
+  //         <div>Organizers</div>
+  //         <div>Adhy Wiranata</div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
-  renderMemberOther() {
-    return (
-      <div className="member-section">
-        <a href="">4 others.</a>
-      </div>
-    );
-  }
+  // renderMemberOther() {
+  //   return (
+  //     <div className="member-section">
+  //       <a href="">4 others.</a>
+  //     </div>
+  //   );
+  // }
 
   renderPastMeetup() {
     return (
@@ -140,7 +142,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <DivText>
         <Header />
         <ActiveMeetup infoMeetup={this.state.info} />
 
@@ -184,11 +186,27 @@ class App extends Component {
           </DivText>
         </SectionWithBackground>
 
+        <SectionWithBackground title="Members" sectionClassName="member-list grey-section" rightContent={<Link text="See all" className="section-right-content" />}>
+          <DivText className="member-section">
+            <DivText className="photo-member">
+              <Image src="img/grey.jpg" alt="member-pic" />
+            </DivText>
+            <DivText className="profile-member">
+              <DivText>Organizers</DivText>
+              <DivText>Adhy Wiranata</DivText>
+            </DivText>
+          </DivText>
+          
+          <DivText className="member-section">
+            <a href="">4 others.</a>
+          </DivText>
+        </SectionWithBackground>
+
         {/* {this.renderAboutMeetup()} */}
-        {this.renderMembers()}
+        {/* {this.renderMembers()} */}
         {this.renderPastMeetup()}
         {/* <ListPeople people={this.state.peoples} /> */}
-      </div>
+      </DivText>
     );
   }
 }

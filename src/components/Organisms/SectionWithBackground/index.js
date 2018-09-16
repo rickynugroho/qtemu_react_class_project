@@ -14,7 +14,15 @@ export default class SectionWithBackground extends Component {
     render() {
         return (
             <DivText className="container-section">
-                <TitleH3>{this.props.title}</TitleH3>
+                <div className="container-section-flex">
+                    <div>
+                        <TitleH3>{this.props.title}</TitleH3>
+                    </div>
+                    <div>
+                        {this.props.rightContent}
+                    </div>
+                </div>
+                
                 <Section className={this.props.sectionClassName}>
                     {this.props.children}
                 </Section>
@@ -25,4 +33,5 @@ export default class SectionWithBackground extends Component {
 
 SectionWithBackground.defaultProps = {
     sectionClassName: 'grey-section',
+    rightContent: '',
 }

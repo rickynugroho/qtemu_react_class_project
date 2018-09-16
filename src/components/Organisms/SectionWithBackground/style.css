@@ -6,3 +6,9 @@
   display: flex;
   justify-content:space-between;
 }
+
+.section-right-content{
+  margin-top: 20px;
+  display: block;
+  position: relative;
+}
