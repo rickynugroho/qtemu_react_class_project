@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Header from './components/Organisms/Header';
 import ActiveMeetup from './components/Organisms/ActiveMeetup';
-import SectionGreyBackground from './components/Organisms/SectionGreyBackground';
+import SectionWithBackground from './components/Organisms/SectionWithBackground';
 import DivText from './components/Atoms/DivText';
 
 // import logo from './logo.svg';
@@ -158,7 +158,7 @@ class App extends Component {
         <Header />
         <ActiveMeetup infoMeetup={this.state.info} />
 
-        <SectionGreyBackground date={this.state.tanggal} title="Next Meetup">
+        <SectionWithBackground date={this.state.tanggal} title="Next Meetup">
           <DivText className="next-meetup-title">
             Awesome meetup and event
             </DivText>
@@ -185,7 +185,7 @@ class App extends Component {
                     Best, Hengki, Giovanni, Sofian, Riza, Agung The JakartaJS Organizers
                 </p>
             </DivText>
-        </SectionGreyBackground>
+        </SectionWithBackground>
 
         {this.renderAboutMeetup()}
         {this.renderMembers()}

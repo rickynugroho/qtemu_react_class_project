@@ -10,15 +10,19 @@ import Section from '../../Molecules/Section';
 
 import './style.css';
 
-export default class SectionGreyBackground extends Component {
+export default class SectionWithBackground extends Component {
     render() {
         return (
             <DivText className="container-section">
                 <TitleH3>{this.props.title}</TitleH3>
-                <Section>
+                <Section className={this.props.sectionClassName}>
                     {this.props.children}
                 </Section>
             </DivText>
         );
     }
+}
+
+SectionWithBackground.defaultProps = {
+    sectionClassName: 'grey-section',
 }
