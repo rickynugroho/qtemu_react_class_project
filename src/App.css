@@ -49,20 +49,6 @@ QTemu Style
   margin:0;
 }
 
-.btn{
-  background:darkslategrey;
-  color:#fff;
-  padding:10px 30px;
-  text-decoration: none;
-}
-
-.btn-grey{
-  background:grey;
-  color:#fff;
-  padding:10px 30px;
-  text-decoration: none;
-}
-
 .next-meetup-title{
   font-weight: bold;
   margin-bottom:5px;
