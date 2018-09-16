@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import Header from './components/Organisms/Header';
 import ActiveMeetup from './components/Organisms/ActiveMeetup';
-import NextMeetup from './components/Organisms/NextMeetup';
+import SectionGreyBackground from './components/Organisms/SectionGreyBackground';
+import DivText from './components/Atoms/DivText';
 
 // import logo from './logo.svg';
 import './normalize.css';
@@ -156,7 +157,35 @@ class App extends Component {
       <div>
         <Header />
         <ActiveMeetup infoMeetup={this.state.info} />
-        <NextMeetup date={this.state.tanggal} />
+
+        <SectionGreyBackground date={this.state.tanggal} title="Next Meetup">
+          <DivText className="next-meetup-title">
+            Awesome meetup and event
+            </DivText>
+            <DivText className="next-meetup-date">
+                {this.state.tanggal}
+            </DivText>
+            <DivText className="next-meetup-p">
+                <p>
+                    Hello, JavaScript & Node.js Ninjas!<br />
+                    Get ready for our monthly meetup JakartaJS! This will be our fifth meetup of 2018!<br />
+                    The meetup format will contain some short stories and technical talks.<br />
+                    If you have short announcement you'd like to share with the audience, you may do so during open mic accouncement.
+                </p>
+                <p>
+                    Remember to bring a photo ID to get through building security.
+                </p>
+                <p>
+                    -----
+                </p>
+                <p>
+                    See you there!
+                </p>
+                <p>
+                    Best, Hengki, Giovanni, Sofian, Riza, Agung The JakartaJS Organizers
+                </p>
+            </DivText>
+        </SectionGreyBackground>
 
         {this.renderAboutMeetup()}
         {this.renderMembers()}
