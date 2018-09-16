@@ -1,9 +1,8 @@
-.next-meetup-title{
-  font-weight: bold;
-  margin-bottom:5px;
+.container-section{
+  padding:10px;
 }
 
-.next-meetup-date{
-  color: grey;
-  margin-bottom:5px;
+.container-section-flex{
+  display: flex;
+  justify-content:space-between;
 }

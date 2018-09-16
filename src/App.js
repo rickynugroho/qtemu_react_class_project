@@ -18,30 +18,30 @@ class App extends Component {
       info: {
         meetupName: 'React Meetup',
         location: 'Jakarta, Indonesia',
-        numberOfMembers: '1078',
+        numberOfMembers: '796',
         headOrganizer: 'Hacktiv8',
         memberOrganizer: 'Twinky, Winky, Dipsy, Lala, Poh',
       },
-      twitter: '@JakartaJS',
-      hashTag: '#jakartajs',
+      twitter: '@ReactMeetup',
+      hashTag: '#reactmeetup',
       meetups: [
         {
           id: 39,
-          date: '27 November 2017',
-          topic: 'JakartaJS with kumparan',
-          participants: '139'
+          date: '1 November 2017',
+          topic: 'React Meetup with kumparan',
+          participants: '54'
         },
         {
           id: 40,
-          date: '27 September 2017',
-          topic: 'JakartaJS with bibli',
-          participants: '239'
+          date: '15 September 2017',
+          topic: 'React Meetup with bibli',
+          participants: '65'
         },
         {
           id: 41,
-          date: '27 October 2017',
-          topic: 'JakartaJS with Hacktiv8',
-          participants: '39'
+          date: '7 October 2017',
+          topic: 'React Meetup with Hacktiv8',
+          participants: '81'
         }
       ]
     };
@@ -59,20 +59,6 @@ class App extends Component {
     //       }
     //     ]
     // };
-  }
-
-  renderAboutMeetup() {
-    return (
-      <div className="about-meetup white-section">
-        <h3>About Meetup</h3>
-        <p>
-          Come and meet other developers.
-        </p>
-        <p>
-          Twitter: @JakartaJS.
-        </p>
-      </div>
-    );
   }
 
   renderMembers() {
@@ -187,7 +173,18 @@ class App extends Component {
             </DivText>
         </SectionWithBackground>
 
-        {this.renderAboutMeetup()}
+        <SectionWithBackground title="About Meetup" sectionClassName="white-section">
+          <DivText>
+              <p>
+                Come and meet other developers.
+              </p>
+              <p>
+                Twitter: {this.state.twitter}.
+              </p>
+          </DivText>
+        </SectionWithBackground>
+
+        {/* {this.renderAboutMeetup()} */}
         {this.renderMembers()}
         {this.renderPastMeetup()}
         {/* <ListPeople people={this.state.peoples} /> */}
