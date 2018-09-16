@@ -59,12 +59,6 @@ QTemu Style
   justify-content: flex-start;
 }
 
-.active-meetup{
-  background: lightgrey;
-  display: flex;
-  justify-content: flex-start;
-}
-
 .photo-member img{
   max-width: 70px;
   max-height: 70px;
