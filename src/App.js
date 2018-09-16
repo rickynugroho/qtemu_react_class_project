@@ -12,18 +12,50 @@ class App extends Component {
     super();
 
     this.state = {
-      // tanggal: new Date().toString(),
-      // peoples: [
-      //     {
-      //       name: 'Obi Wan',
-      //       status: 'Jedi'
-      //     },
-      //     {
-      //       name: 'Luke Skywalker',
-      //       status: 'Padawan'
-      //     }
-      //   ]
+      tanggal: new Date().toString(),
+      info: {
+        location: 'Jakarta, Indonesia',
+        numberOfMembers: '1078',
+        headOrganizer: 'Hacktiv8',
+        memberOrganizer: 'Twinky, Winky, Dipsy, Lala, Poh',
+      },
+      twitter: '@JakartaJS',
+      hashTag: '#jakartajs',
+      meetups: [
+        {
+          id: 39,
+          date: '27 November 2017',
+          topic: 'JakartaJS with kumparan',
+          participants: '139'
+        },
+        {
+          id: 40,
+          date: '27 September 2017',
+          topic: 'JakartaJS with bibli',
+          participants: '239'
+        },
+        {
+          id: 41,
+          date: '27 October 2017',
+          topic: 'JakartaJS with Hacktiv8',
+          participants: '39'
+        }
+      ]
     };
+
+    // this.state = {
+    //   tanggal: new Date().toString(),
+    //   peoples: [
+    //       {
+    //         name: 'Obi Wan',
+    //         status: 'Jedi'
+    //       },
+    //       {
+    //         name: 'Luke Skywalker',
+    //         status: 'Padawan'
+    //       }
+    //     ]
+    // };
   }
 
   renderNextMeetup() {
