@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import Header from './components/Organisms/Header';
 import ActiveMeetup from './components/Organisms/ActiveMeetup';
 import SectionWithBackground from './components/Organisms/SectionWithBackground';
+// import Section from './components/Molecules/Section';
 import DivText from './components/Atoms/DivText';
 import Link from './components/Atoms/Link';
 import Image from './components/Atoms/Image';
+import Hr from './components/Atoms/Hr';
 
 // import logo from './logo.svg';
 import './normalize.css';
@@ -63,41 +65,41 @@ class App extends Component {
     // };
   }
 
-  renderPastMeetup() {
-    return (
-      <div className="past-meetup white-section">
-        <div className="container-section-flex">
-          <div>
-            <h3>Past Meetup</h3>
-          </div>
-          <div>
-            <a href="">See all</a>
-          </div>
-        </div>
-        <div className="past-meetup-list">
-          {this.renderMeetupEvent()}
-          {this.renderMeetupEvent()}
-          {this.renderMeetupEvent()}
-        </div>
-      </div>
-    );
-  }
+  // renderPastMeetup() {
+  //   return (
+  //     <div className="past-meetup white-section">
+  //       <div className="container-section-flex">
+  //         <div>
+  //           <h3>Past Meetup</h3>
+  //         </div>
+  //         <div>
+  //           <a href="">See all</a>
+  //         </div>
+  //       </div>
+  //       <div className="past-meetup-list">
+  //         {this.renderMeetupEvent()}
+  //         {this.renderMeetupEvent()}
+  //         {this.renderMeetupEvent()}
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
-  renderMeetupEvent() {
-    return (
-      <div className="meetup-box">
-        27 November 2017
-        <hr />
-        #39 JakartaJS Meetup
-        <div className="meetup-went-total">
-          139 went
-        </div>
-        <div className="meetup-view-btn">
-          <a href="" className="btn-grey">View</a>
-        </div>
-      </div>
-    );
-  }
+  // renderMeetupEvent() {
+  //   return (
+  //     <div className="meetup-box">
+  //       27 November 2017
+  //       <hr />
+  //       #39 JakartaJS Meetup
+  //       <div className="meetup-went-total">
+  //         139 went
+  //       </div>
+  //       <div className="meetup-view-btn">
+  //         <a href="" className="btn-grey">View</a>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   render() {
     return (
@@ -152,17 +154,49 @@ class App extends Component {
             </DivText>
             <DivText className="profile-member">
               <DivText>Organizers</DivText>
-              <DivText>Adhy Wiranata</DivText>
+              <DivText>{this.state.info.memberOrganizer}</DivText>
             </DivText>
           </DivText>
-          
+
+          {/* <DivText className="photo-member">
+            <Image src="img/grey.jpg" alt="member-pic" />
+          </DivText>
+          <DivText className="profile-member">
+            <DivText>Organizers</DivText>
+            <DivText>Adhy Wiranata</DivText>
+          </DivText> */}
+
           <DivText className="member-section">
             <a href="">4 others.</a>
           </DivText>
         </SectionWithBackground>
 
-        {this.renderPastMeetup()}
+        <SectionWithBackground title="Past Meetup" sectionClassName="white-section" rightContent={<Link text="See all" className="section-right-content" />}>
+          <DivText className="past-meetup-list">
+            {this.state.meetups.map((meetup, index) => {
+              return (
+                <DivText key={index} className="meetup-box">
+                  <DivText>{meetup.date}</DivText>
+                  <Hr />
+                  <DivText>{meetup.topic}</DivText>
+                  <DivText className="meetup-went-total">
+                    <DivText>{meetup.participants} went</DivText>
+                  </DivText>
+                  <DivText className="meetup-view-btn">
+                    <Link className="btn-grey" text="View" />
+                  </DivText>
+                </DivText>
+              );
+            })}
+          </DivText>
+        </SectionWithBackground>
+
+        {/* {this.renderPastMeetup()} */}
         {/* <ListPeople people={this.state.peoples} /> */}
+
+        <Hr className="hr-footer" />
+        <DivText className="copyright">Copyright ReactMeetup 2018</DivText>
+        
       </DivText>
     );
   }

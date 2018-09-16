@@ -89,3 +89,12 @@ QTemu Style
   display: flex;
   justify-content: space-between  ;
 }
+
+.hr-footer{
+  margin:40px 10px;
+}
+
+.copyright{
+  text-align: center;
+  margin-bottom: 30px;
+}
