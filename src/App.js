@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Header from './components/Organisms/Header';
 import ActiveMeetup from './components/Organisms/ActiveMeetup';
+import NextMeetup from './components/Organisms/NextMeetup';
 
 // import logo from './logo.svg';
 import './normalize.css';
@@ -57,43 +58,6 @@ class App extends Component {
     //       }
     //     ]
     // };
-  }
-
-  renderNextMeetup() {
-    return (
-      <div className="container-section">
-        <h3>Next Meetup</h3>
-        <div className="next-meetup grey-section">
-          <div className="next-meetup-title">
-            Awesome meetup and event
-          </div>
-          <div className="next-meetup-date">
-            1 January 2018
-            {/* {this.state.tanggal} */}
-          </div>
-          <div className="next-meetup-p">
-            <p>
-              Hello, JavaScript & Node.js Ninjas!<br />
-              Get ready for our monthly meetup JakartaJS! This will be our fifth meetup of 2018!<br />
-              The meetup format will contain some short stories and technical talks.<br />
-              If you have short announcement you'd like to share with the audience, you may do so during open mic accouncement.
-            </p>
-            <p>
-              Remember to bring a photo ID to get through building security.
-            </p>
-            <p>
-              -----
-            </p>
-            <p>
-              See you there!
-            </p>
-            <p>
-              Best, Hengki, Giovanni, Sofian, Riza, Agung The JakartaJS Organizers
-            </p>
-          </div>
-        </div>
-      </div>
-    );
   }
 
   renderAboutMeetup() {
@@ -192,9 +156,8 @@ class App extends Component {
       <div>
         <Header />
         <ActiveMeetup infoMeetup={this.state.info} />
+        <NextMeetup date={this.state.tanggal} />
 
-        {/* {this.renderActiveMeetup()} */}
-        {this.renderNextMeetup()}
         {this.renderAboutMeetup()}
         {this.renderMembers()}
         {this.renderPastMeetup()}

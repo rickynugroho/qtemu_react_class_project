@@ -1,0 +1,9 @@
+.next-meetup-title{
+  font-weight: bold;
+  margin-bottom:5px;
+}
+
+.next-meetup-date{
+  color: grey;
+  margin-bottom:5px;
+}
