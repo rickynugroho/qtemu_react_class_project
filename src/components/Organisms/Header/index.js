@@ -12,8 +12,8 @@ export default class Header extends Component {
             <div className="header">
                 <HeaderLink>
                     <Link text="Qtemu" className="title" />
-                    <Link text="Create Meetup" />
-                    <Link text="Explore" />
+                    <Link text="Create Meetup" className="header-reg-link" />
+                    <Link text="Explore" className="header-reg-link" />
                 </HeaderLink>
                 <div>
                     <Link text='Login' />
