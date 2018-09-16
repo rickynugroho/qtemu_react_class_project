@@ -1,0 +1,13 @@
+.btn{
+  background:darkslategrey;
+  color:#fff;
+  padding:10px 30px;
+  text-decoration: none;
+}
+
+.btn-grey{
+  background:grey;
+  color:#fff;
+  padding:10px 30px;
+  text-decoration: none;
+}
