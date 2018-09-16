@@ -1,0 +1,19 @@
+.description-active-meetup-left{
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
+  margin-bottom:15px;
+}
+
+.description-active-meetup-left:last-of-type{
+  margin-top:15px;
+}
+
+.description-active-meetup-left .left-content{
+  width:100px;
+}
+
+.description-active-meetup-left .right-content{
+  width:200px;
+  margin-left:20px;
+}
