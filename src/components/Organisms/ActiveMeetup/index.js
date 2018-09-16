@@ -15,7 +15,7 @@ export default class ActiveMeetup extends Component {
             <DivText className="active-meetup grey-section">
                 <Image className="photo-active-meetup" src="img/grey.jpg" alt="grey area" />
                 <DivText className="description-active-meetup">
-                    <TitleH3 text={this.props.infoMeetup.meetupName} />
+                    <TitleH3>{this.props.infoMeetup.meetupName}</TitleH3>
                     <DivText className="description-active-meetup-content">
                         <LeftRightDescription>
                             <DivText className="left-content">Location</DivText>

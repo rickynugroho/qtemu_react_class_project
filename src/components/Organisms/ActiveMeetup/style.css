@@ -1,5 +1,8 @@
 .description-active-meetup{
   margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 img.photo-active-meetup{
@@ -10,7 +13,9 @@ img.photo-active-meetup{
 .description-active-meetup-content{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width:250px;
+  height: 100%;
 }
 
 .description-active-meetup h3{
