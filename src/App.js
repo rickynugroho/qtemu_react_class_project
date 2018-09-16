@@ -63,47 +63,6 @@ class App extends Component {
     // };
   }
 
-  // renderMembers() {
-  //   return (
-  //     <div className="container-section">
-  //       <div className="container-section-flex">
-  //         <div>
-  //           <h3>Members</h3>
-  //         </div>
-  //         <div>
-  //           <a href="">See all</a>
-  //         </div>
-  //       </div>
-  //       <div className="member-list grey-section">
-  //         {this.renderMember()}
-  //         {this.renderMemberOther()}
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
-  // renderMember() {
-  //   return (
-  //     <div className="member-section">
-  //       <div className="photo-member">
-  //         <img src="img/grey.jpg" alt="member-pic" />
-  //       </div>
-  //       <div className="profile-member">
-  //         <div>Organizers</div>
-  //         <div>Adhy Wiranata</div>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
-  // renderMemberOther() {
-  //   return (
-  //     <div className="member-section">
-  //       <a href="">4 others.</a>
-  //     </div>
-  //   );
-  // }
-
   renderPastMeetup() {
     return (
       <div className="past-meetup white-section">
@@ -202,8 +161,6 @@ class App extends Component {
           </DivText>
         </SectionWithBackground>
 
-        {/* {this.renderAboutMeetup()} */}
-        {/* {this.renderMembers()} */}
         {this.renderPastMeetup()}
         {/* <ListPeople people={this.state.peoples} /> */}
       </DivText>
