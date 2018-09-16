@@ -12,29 +12,29 @@ import './style.css';
 export default class ActiveMeetup extends Component {
     render() {
         return (
-            <div className="active-meetup grey-section">
+            <DivText className="active-meetup grey-section">
                 <Image className="photo-active-meetup" src="img/grey.jpg" alt="grey area" />
-                <div className="description-active-meetup">
+                <DivText className="description-active-meetup">
                     <TitleH3 text={this.props.infoMeetup.meetupName} />
-                    <div className="description-active-meetup-content">
+                    <DivText className="description-active-meetup-content">
                         <LeftRightDescription>
-                            <DivText className="left-content" text="Location" />
-                            <DivText className="right-content" text={this.props.infoMeetup.location} />
+                            <DivText className="left-content">Location</DivText>
+                            <DivText className="right-content">{this.props.infoMeetup.location}</DivText>
                         </LeftRightDescription>
                         <LeftRightDescription>
-                            <DivText className="left-content" text="Members" />
-                            <DivText className="right-content" text={this.props.infoMeetup.numberOfMembers} />
+                            <DivText className="left-content">Members</DivText>
+                            <DivText className="right-content">{this.props.infoMeetup.numberOfMembers}</DivText>
                         </LeftRightDescription>
                         <LeftRightDescription>
-                            <DivText className="left-content" text="Organizers" />
-                            <DivText className="right-content" text={this.props.infoMeetup.headOrganizer} />
+                            <DivText className="left-content">Organizers</DivText>
+                            <DivText className="right-content">{this.props.infoMeetup.headOrganizer}</DivText>
                         </LeftRightDescription>
                         <LeftRightDescription>
                             <Link className="btn" text="Join Us"/>
                         </LeftRightDescription>
-                    </div>
-                </div>
-            </div>
+                    </DivText>
+                </DivText>
+            </DivText>
         );
     }
 }
