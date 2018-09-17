@@ -107,6 +107,11 @@ class App extends Component {
         <Header />
         <ActiveMeetup infoMeetup={this.state.info} />
 
+        {/* TODO: Cara define organism yg benar seperti ActiveMeetup atau SectionWithBackground (dimana komponen dibawahnya masuk sebagai children)? */}
+        {/* TODO: Cara menggunakan templates dalam atomic design? */}
+        {/* TODO: Cara membuat atom yg lebih benar? Button (use children) atau Link (use props text)? */}
+        {/* TODO: Molecules saya hanya berisi DIV, konsep ini benar? Atau harusnya dihandle di Organism? */}
+
         <SectionWithBackground date={this.state.tanggal} title="Next Meetup">
           <DivText className="next-meetup-title">
             Awesome meetup and event
