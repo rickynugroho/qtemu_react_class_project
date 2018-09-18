@@ -24,7 +24,23 @@ class App extends Component {
         location: 'Jakarta, Indonesia',
         numberOfMembers: '796',
         headOrganizer: 'Hacktiv8',
-        memberOrganizer: 'Twinky, Winky, Dipsy, Lala, Poh',
+        memberOrganizer: [
+          {
+            name: 'Twinky',
+          },
+          {
+            name: 'Winky',
+          },
+          {
+            name: 'Dipsy',
+          },
+          {
+            name: 'Lala',
+          },
+          {
+            name: 'Poh',
+          },
+        ],
       },
       twitter: '@ReactMeetup',
       hashTag: '#reactmeetup',
@@ -153,15 +169,19 @@ class App extends Component {
         </SectionWithBackground>
 
         <SectionWithBackground title="Members" sectionClassName="member-list grey-section" rightContent={<Link text="See all" className="section-right-content" />}>
-          <DivText className="member-section">
-            <DivText className="photo-member">
-              <Image src="img/grey.jpg" alt="member-pic" />
-            </DivText>
-            <DivText className="profile-member">
-              <DivText>Organizers</DivText>
-              <DivText>{this.state.info.memberOrganizer}</DivText>
-            </DivText>
-          </DivText>
+          {this.state.info.memberOrganizer.map((member, index) => {
+            return (
+              <DivText className="member-section" key={index}>
+                <DivText className="photo-member">
+                  <Image src="img/grey.jpg" alt="member-pic" />
+                </DivText>
+                <DivText className="profile-member">
+                  <DivText>Organizers</DivText>
+                  <DivText>{member.name}</DivText>
+                </DivText>
+              </DivText>
+            );
+          })}
 
           {/* <DivText className="photo-member">
             <Image src="img/grey.jpg" alt="member-pic" />
@@ -171,9 +191,9 @@ class App extends Component {
             <DivText>Adhy Wiranata</DivText>
           </DivText> */}
 
-          <DivText className="member-section">
+          {/* <DivText className="member-section">
             <a href="">4 others.</a>
-          </DivText>
+          </DivText> */}
         </SectionWithBackground>
 
         <SectionWithBackground title="Past Meetup" sectionClassName="white-section" rightContent={<Link text="See all" className="section-right-content" />}>
