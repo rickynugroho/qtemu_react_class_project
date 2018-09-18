@@ -6,8 +6,11 @@ import SectionWithBackground from './components/Organisms/SectionWithBackground'
 // import Section from './components/Molecules/Section';
 import DivText from './components/Atoms/DivText';
 import Link from './components/Atoms/Link';
-import Image from './components/Atoms/Image';
+// import Image from './components/Atoms/Image';
 import Hr from './components/Atoms/Hr';
+import MemberList from './components/Molecules/MemberList';
+
+import axios from 'axios';
 
 // import logo from './logo.svg';
 import './normalize.css';
@@ -24,23 +27,7 @@ class App extends Component {
         location: 'Jakarta, Indonesia',
         numberOfMembers: '796',
         headOrganizer: 'Hacktiv8',
-        memberOrganizer: [
-          {
-            name: 'Twinky',
-          },
-          {
-            name: 'Winky',
-          },
-          {
-            name: 'Dipsy',
-          },
-          {
-            name: 'Lala',
-          },
-          {
-            name: 'Poh',
-          },
-        ],
+        memberOrganizer: [],
       },
       twitter: '@ReactMeetup',
       hashTag: '#reactmeetup',
@@ -65,6 +52,16 @@ class App extends Component {
         }
       ]
     };
+  }
+
+  componentDidMount() {
+    axios
+      .get("https://randomuser.me/api/?results=4")
+      .then(response => {
+        this.setState({ info: {
+          memberOrganizer: response.data.results,
+        }})
+      });
   }
 
   render() {
@@ -119,19 +116,21 @@ class App extends Component {
         </SectionWithBackground>
 
         <SectionWithBackground title="Members" sectionClassName="member-list grey-section" rightContent={<Link text="See all" className="section-right-content" />}>
-          {this.state.info.memberOrganizer.map((member, index) => {
+          <MemberList memberOrganizer={this.state.info.memberOrganizer} />
+
+          {/* {this.state.info.memberOrganizer.map((member, index) => {
             return (
               <DivText className="member-section" key={index}>
                 <DivText className="photo-member">
-                  <Image src="img/grey.jpg" alt="member-pic" />
+                  <Image src={member.picture.large} alt="member-pic" />
                 </DivText>
                 <DivText className="profile-member">
-                  <DivText>Organizers</DivText>
-                  <DivText>{member.name}</DivText>
+                  <DivText>{member.name.first}</DivText>
+                  <DivText>{member.email}</DivText>
                 </DivText>
               </DivText>
             );
-          })}
+          })} */}
 
           {/* <DivText className="member-section">
             <a href="">4 others.</a>

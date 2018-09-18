@@ -45,7 +45,7 @@ QTemu Style
   margin-bottom:5px;
 }
 
-.member-list{
+.member-list > div{
   display: flex;
   justify-content: flex-start;
 }
@@ -97,4 +97,9 @@ QTemu Style
 .copyright{
   text-align: center;
   margin-bottom: 30px;
+}
+
+.wrap-text{
+  width:170px;
+  word-wrap: break-word;
 }
