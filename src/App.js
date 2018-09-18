@@ -65,57 +65,7 @@ class App extends Component {
         }
       ]
     };
-
-    // this.state = {
-    //   tanggal: new Date().toString(),
-    //   peoples: [
-    //       {
-    //         name: 'Obi Wan',
-    //         status: 'Jedi'
-    //       },
-    //       {
-    //         name: 'Luke Skywalker',
-    //         status: 'Padawan'
-    //       }
-    //     ]
-    // };
   }
-
-  // renderPastMeetup() {
-  //   return (
-  //     <div className="past-meetup white-section">
-  //       <div className="container-section-flex">
-  //         <div>
-  //           <h3>Past Meetup</h3>
-  //         </div>
-  //         <div>
-  //           <a href="">See all</a>
-  //         </div>
-  //       </div>
-  //       <div className="past-meetup-list">
-  //         {this.renderMeetupEvent()}
-  //         {this.renderMeetupEvent()}
-  //         {this.renderMeetupEvent()}
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
-  // renderMeetupEvent() {
-  //   return (
-  //     <div className="meetup-box">
-  //       27 November 2017
-  //       <hr />
-  //       #39 JakartaJS Meetup
-  //       <div className="meetup-went-total">
-  //         139 went
-  //       </div>
-  //       <div className="meetup-view-btn">
-  //         <a href="" className="btn-grey">View</a>
-  //       </div>
-  //     </div>
-  //   );
-  // }
 
   render() {
     return (
@@ -183,14 +133,6 @@ class App extends Component {
             );
           })}
 
-          {/* <DivText className="photo-member">
-            <Image src="img/grey.jpg" alt="member-pic" />
-          </DivText>
-          <DivText className="profile-member">
-            <DivText>Organizers</DivText>
-            <DivText>Adhy Wiranata</DivText>
-          </DivText> */}
-
           {/* <DivText className="member-section">
             <a href="">4 others.</a>
           </DivText> */}
@@ -216,9 +158,6 @@ class App extends Component {
           </DivText>
         </SectionWithBackground>
 
-        {/* {this.renderPastMeetup()} */}
-        {/* <ListPeople people={this.state.peoples} /> */}
-
         <Hr className="hr-footer" />
         <DivText className="copyright">Copyright ReactMeetup 2018</DivText>
         
@@ -226,26 +165,5 @@ class App extends Component {
     );
   }
 }
-
-// export class ListPeople extends Component {
-//   // constructor(props) {
-//   //   // hanya diperlukan ketika props mau digunakan di dalam constructor
-//   //   super(props);
-//   // }
-
-//   renderChild() {
-//     return this.props.people.map((data, index) => {
-//       return (
-//         <div key={index}>
-//           {data.name}
-//         </div>
-//       )
-//     });
-//   }
-
-//   render() {
-//     return this.renderChild();
-//   }
-// }
 
 export default App;
