@@ -48,19 +48,22 @@ QTemu Style
 .member-list > div{
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .member-section{
-  margin-right: 20px;
+  /* padding-right: 20px; */
+  padding-bottom: 10px;
   display: flex;
   justify-content: flex-start;
+  width: calc(25%);
 }
 
 .photo-member img{
   max-width: 70px;
   max-height: 70px;
-  -webkit-border-radius: 35px;
-  border-radius: 35px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
 }
 
 .profile-member{

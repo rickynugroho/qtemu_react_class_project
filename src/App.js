@@ -56,11 +56,13 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get("https://randomuser.me/api/?results=4")
+      .get("https://randomuser.me/api/?results=15")
       .then(response => {
-        this.setState({ info: {
-          memberOrganizer: response.data.results,
-        }})
+        this.setState({
+          info: {
+            memberOrganizer: response.data.results,
+          }
+        })
       });
   }
 
@@ -79,59 +81,44 @@ class App extends Component {
           <DivText className="next-meetup-title">
             Awesome meetup and event
             </DivText>
-            <DivText className="next-meetup-date">
-                {this.state.tanggal}
-            </DivText>
-            <DivText className="next-meetup-p">
-                <p>
-                    Hello, JavaScript & Node.js Ninjas!<br />
-                    Get ready for our monthly meetup JakartaJS! This will be our fifth meetup of 2018!<br />
-                    The meetup format will contain some short stories and technical talks.<br />
-                    If you have short announcement you'd like to share with the audience, you may do so during open mic accouncement.
+          <DivText className="next-meetup-date">
+            {this.state.tanggal}
+          </DivText>
+          <DivText className="next-meetup-p">
+            <p>
+              Hello, JavaScript & Node.js Ninjas!<br />
+              Get ready for our monthly meetup JakartaJS! This will be our fifth meetup of 2018!<br />
+              The meetup format will contain some short stories and technical talks.<br />
+              If you have short announcement you'd like to share with the audience, you may do so during open mic accouncement.
                 </p>
-                <p>
-                    Remember to bring a photo ID to get through building security.
+            <p>
+              Remember to bring a photo ID to get through building security.
                 </p>
-                <p>
-                    -----
+            <p>
+              -----
                 </p>
-                <p>
-                    See you there!
+            <p>
+              See you there!
                 </p>
-                <p>
-                    Best, Hengki, Giovanni, Sofian, Riza, Agung The JakartaJS Organizers
+            <p>
+              Best, Hengki, Giovanni, Sofian, Riza, Agung The JakartaJS Organizers
                 </p>
-            </DivText>
+          </DivText>
         </SectionWithBackground>
 
         <SectionWithBackground title="About Meetup" sectionClassName="white-section">
           <DivText>
-              <p>
-                Come and meet other developers.
+            <p>
+              Come and meet other developers.
               </p>
-              <p>
-                Twitter: {this.state.twitter}.
+            <p>
+              Twitter: {this.state.twitter}.
               </p>
           </DivText>
         </SectionWithBackground>
 
         <SectionWithBackground title="Members" sectionClassName="member-list grey-section" rightContent={<Link text="See all" className="section-right-content" />}>
           <MemberList memberOrganizer={this.state.info.memberOrganizer} />
-
-          {/* {this.state.info.memberOrganizer.map((member, index) => {
-            return (
-              <DivText className="member-section" key={index}>
-                <DivText className="photo-member">
-                  <Image src={member.picture.large} alt="member-pic" />
-                </DivText>
-                <DivText className="profile-member">
-                  <DivText>{member.name.first}</DivText>
-                  <DivText>{member.email}</DivText>
-                </DivText>
-              </DivText>
-            );
-          })} */}
-
           {/* <DivText className="member-section">
             <a href="">4 others.</a>
           </DivText> */}
@@ -159,7 +146,7 @@ class App extends Component {
 
         <Hr className="hr-footer" />
         <DivText className="copyright">Copyright ReactMeetup 2018</DivText>
-        
+
       </DivText>
     );
   }
