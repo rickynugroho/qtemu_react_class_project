@@ -58,11 +58,9 @@ class App extends Component {
     axios
       .get("https://randomuser.me/api/?results=15")
       .then(response => {
-        this.setState({
-          info: {
-            memberOrganizer: response.data.results,
-          }
-        })
+        let temporaryState = this.state;
+        temporaryState.info.memberOrganizer = response.data.results;
+        this.setState(temporaryState);
       });
   }
 
