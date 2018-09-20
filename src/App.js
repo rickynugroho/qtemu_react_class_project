@@ -67,7 +67,7 @@ class App extends Component {
   render() {
     return (
       <DivText>
-        <Header />
+        <Header addClassOnClick='bg-red' />
         <ActiveMeetup infoMeetup={this.state.info} />
 
         {/* TODO: Cara define organism yg benar seperti ActiveMeetup atau SectionWithBackground (dimana komponen dibawahnya masuk sebagai children)? */}
