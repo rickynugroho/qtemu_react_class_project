@@ -3,12 +3,15 @@ import React, { Component } from 'react';
 import Header from './components/Organisms/Header';
 import ActiveMeetup from './components/Organisms/ActiveMeetup';
 import SectionWithBackground from './components/Organisms/SectionWithBackground';
-// import Section from './components/Molecules/Section';
 import DivText from './components/Atoms/DivText';
 import Link from './components/Atoms/Link';
-// import Image from './components/Atoms/Image';
 import Hr from './components/Atoms/Hr';
 import MemberList from './components/Molecules/MemberList';
+import Image from './components/Atoms/Image';
+import TitleH3 from './components/Atoms/TitleH3';
+import LeftRightDescription from './components/Molecules/LeftRightDescription';
+import Section from './components/Molecules/Section';
+import Button from '@material-ui/core/Button';
 
 import axios from 'axios';
 
@@ -68,7 +71,33 @@ class App extends Component {
     return (
       <DivText>
         <Header addClassOnClick='bg-red' />
-        <ActiveMeetup infoMeetup={this.state.info} />
+        <ActiveMeetup infoMeetup={this.state.info}>
+          <Section>
+          <Image className="photo-active-meetup" src="img/grey.jpg" alt="grey area" />
+          <DivText className="description-active-meetup">
+              <TitleH3>{this.state.info.meetupName}</TitleH3>
+              <DivText className="description-active-meetup-content">
+                  <LeftRightDescription>
+                      <DivText className="left-content">Location</DivText>
+                      <DivText className="right-content">{this.state.info.location}</DivText>
+                  </LeftRightDescription>
+                  <LeftRightDescription>
+                      <DivText className="left-content">Members</DivText>
+                      <DivText className="right-content">{this.state.info.numberOfMembers}</DivText>
+                  </LeftRightDescription>
+                  <LeftRightDescription>
+                      <DivText className="left-content">Organizers</DivText>
+                      <DivText className="right-content">{this.state.info.headOrganizer}</DivText>
+                  </LeftRightDescription>
+                  <LeftRightDescription>
+                      <Button variant="raised" color="primary">
+                          Join Us
+                      </Button>
+                  </LeftRightDescription>
+              </DivText>
+          </DivText>
+      </Section>
+        </ActiveMeetup>
 
         {/* TODO: Cara define organism yg benar seperti ActiveMeetup atau SectionWithBackground (dimana komponen dibawahnya masuk sebagai children)? */}
         {/* TODO: Cara menggunakan templates dalam atomic design? */}
