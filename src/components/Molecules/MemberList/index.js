@@ -13,7 +13,7 @@ export default class MemberList extends Component {
 
     shouldComponentUpdate (nextProps, nextState) {
         console.log(nextProps);
-        if(this.state.memberOrganizer != nextProps.memberOrganizer){
+        if(this.state.memberOrganizer !== nextProps.memberOrganizer){
             this.setState({
                 memberOrganizer: nextProps.memberOrganizer,
             });
