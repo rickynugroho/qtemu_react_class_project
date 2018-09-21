@@ -14,6 +14,7 @@ import Section from './components/Molecules/Section';
 import Button from '@material-ui/core/Button';
 
 import axios from 'axios';
+import 'typeface-roboto'
 
 // import logo from './logo.svg';
 import './normalize.css';
@@ -72,7 +73,7 @@ class App extends Component {
       <DivText>
         {/* addClassOnClick='bg-red' */}
         <Header />
-        
+
         <ActiveMeetup infoMeetup={this.state.info}>
           <Section>
           <Image className="photo-active-meetup" src="img/grey.jpg" alt="grey area" />
