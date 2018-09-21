@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-import { withStyles } from '@material-ui/core/styles';
-// import HeaderLink from '../../Molecules/HeaderLink';
-// import Link from '../../Atoms/Link';
-
-import './style.css';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const styles = {
     root: {
@@ -25,58 +20,40 @@ const styles = {
         marginRight: 20,
     },
     title: {
-        marginRight: 20,
+        textTransform: 'none',
+        fontSize: '1.1em',
+        padding:0,
+        minHeight: 50,
+        minWidth: 0,
     },
 };
 
-class Header extends Component {
-    // constructor() {
-    //     super();
-
-    //     this.state = {
-    //         classTest: 'header',
-    //     };
-    // }
-
-    // addClass() {
-    //     let currentClass = this.state.classTest;
-    //     this.setState({
-    //         classTest: currentClass + ' ' + this.props.addClassOnClick,
-    //     });
-    // }
-
-    render() {
-        // const { classes } = props;
-        return (
-            <div className={styles.root}>
-                <AppBar position="static" color="primary">
-                    <Toolbar>
-                        {/* 
-                        <IconButton className={styles.menuButton} color="inherit" aria-label="Menu">
-                            <MenuIcon />
-                        </IconButton> 
-                        */}
-                        <Typography className={styles.title} variant="title" color="inherit">
-                            Qtemu
-                        </Typography>
-                        <Button color="inherit">Create Meetup</Button>
-                        <Button color="inherit">Explore</Button>
-                    </Toolbar>
-                </AppBar>
-            </div>
-
-            // <div className={this.state.classTest} onClick={() => this.addClass()}>
-            //     <HeaderLink>
-            //         <Link text="Qtemu" className="title" />
-            //         <Link text="Create Meetup" className="header-reg-link" />
-            //         <Link text="Explore" className="header-reg-link" />
-            //     </HeaderLink>
-            //     <div>
-            //         <Link text='Login' />
-            //     </div>
-            // </div>
-        )
-    }
+function ButtonAppBar(props) {
+    const { classes } = props;
+    return (
+        <div className={classes.root}>
+            <AppBar position="static">
+                <Toolbar>
+                    {/* 
+                    <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                        <MenuIcon />
+                    </IconButton> 
+                    */}
+                    <Typography variant="title" color="inherit" className={classes.grow}>
+                        <Button className={classes.title} variant="text" color="inherit">QTemu</Button>
+                    </Typography>
+                    <Button color="inherit">Create Meetup</Button>
+                    <Button color="inherit">Explore</Button>
+                    <Button color="inherit">About Us</Button>
+                    <Button color="inherit">Login</Button>
+                </Toolbar>
+            </AppBar>
+        </div>
+    );
 }
 
-export default withStyles(styles)(Header);
+ButtonAppBar.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(ButtonAppBar);
