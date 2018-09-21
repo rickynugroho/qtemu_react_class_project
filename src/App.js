@@ -70,7 +70,9 @@ class App extends Component {
   render() {
     return (
       <DivText>
-        <Header addClassOnClick='bg-red' />
+        {/* addClassOnClick='bg-red' */}
+        <Header />
+        
         <ActiveMeetup infoMeetup={this.state.info}>
           <Section>
           <Image className="photo-active-meetup" src="img/grey.jpg" alt="grey area" />
