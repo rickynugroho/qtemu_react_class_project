@@ -5,8 +5,19 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { Grid } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
+<<<<<<< HEAD
 import MenuIcon from '@material-ui/icons/Menu';
+=======
+// import MenuIcon from '@material-ui/icons/Menu';
+import { withStyles } from '@material-ui/core/styles';
+// import HeaderLink from '../../Molecules/HeaderLink';
+// import Link from '../../Atoms/Link';
+
+import 'typeface-roboto'
+import './style.css';
+>>>>>>> 7d311fe9e2a2a0dbb92e9277dc38f2f562337d0c
 
 const styles = {
     root: {
